@@ -92,16 +92,59 @@ public class Ders111 {
         }
     }
 
-    public static String [] siralama()
+    public static void  siralama()
     {
+        /*
+        double [] dizi = new double[liste.length];
 
-        return null;
+        for (int i=0;i<liste.length;i++)
+                dizi[i] =Double.valueOf(liste[i][6]);
+
+
+        for(int i=0;i<dizi.length;i++)
+        {
+
+            for(int j=i;j<dizi.length;j++)
+            {
+                if(dizi[i]>dizi[j])
+                {
+                    double gecici = dizi[i];
+                    dizi[i] = dizi[j];
+                    dizi[j] = gecici;
+                }
+
+            }
+        }
+
+        */
+
+        for(int i=0;i<liste.length;i++)
+        {
+
+            for(int j=i;j<liste.length;j++)
+            {
+
+                if(Double.valueOf(liste[i][6])>Double.valueOf(liste[j][6]))
+                {
+                    String gecici [] = liste[i];
+                    liste[i]=liste[j];
+                    liste[j]=gecici;
+                }
+
+            }
+
+
+        }
+
     }
 
     public static double ortalama(String vize,String finalNotu)
     {
 
-        return 0;
+        double v= Double.valueOf(vize);
+        double f= Double.valueOf(finalNotu);
+        return v*0.3+f*0.7;
+
     }
 
     public static double canHesapla()
@@ -148,6 +191,42 @@ public class Ders111 {
                 sil(no);
 
             }
+            else if(secim==5)
+            {
+
+                String  geciciListe [][] =liste;
+
+                liste=new String[geciciListe.length][7];
+
+                int sayac=0;
+                for (String  [] ss : geciciListe)
+                {
+                    double ortalama =ortalama(ss[4],ss[5]);
+
+                    String [] satir=new String[7];
+                    for(int i=0;i<ss.length;i++)
+                    {
+                        satir[i]=ss[i];
+                    }
+                    satir[6]=String.valueOf(ortalama);
+
+                    liste[sayac]=satir;
+                    sayac++;
+
+
+                }
+
+
+
+            }
+            else if(secim==7)
+            {
+                siralama();
+
+
+            }
+
+
 
             listele(liste);
 
@@ -158,8 +237,10 @@ public class Ders111 {
 
 
 
+        String kelime=" Java Developer ";
 
-
+        kelime.length();
+        kelime.charAt(0);
 
 
 
